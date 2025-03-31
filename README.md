@@ -1,4 +1,26 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SharedTab - Simplified Group Expense Sharing
+
+Managing shared expenses with friends, roommates, or colleagues can quickly become a hassle. SharedTab simplifies the process, allowing you to create groups, add members, track expenses, and settle debts—without the need for logins or registrations. Whether you're splitting dinner bills, rent, or group trip expenses, SharedTab keeps everything organized and fair.
+
+## Key Features
+
+### Create Groups Easily
+Start by creating a group for any shared expenses. Whether it's a vacation fund, household costs, or a weekend getaway, you can add members effortlessly.
+
+### No Registration Needed
+Forget about signing up or remembering passwords. SharedTab requires no logins, making it quick and hassle-free for everyone to join and contribute.
+
+### Add Members Instantly
+Just share a private link with friends or roommates—they can join the group and add expenses without needing to create an account.
+
+### Track Expenses Transparently
+Every expense added to the group is recorded, and balances are updated instantly. Members can see who paid what and how much each person owes, making it easy to settle up.
+
+### Share Links Privately
+Each group has a unique private link that can be shared securely among members. Only those with the link can access the group's expense log, ensuring privacy.
+
+### Trust-Based Logging
+SharedTab provides a basic log of transactions, but it operates on a trust-based system. Members are expected to enter expenses honestly, making it an easy and lightweight solution for tracking shared costs.
 
 ## Getting Started
 
