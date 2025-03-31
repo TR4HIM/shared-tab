@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": {
+    "id": "123",
+    "name": "Trip to Paris",
+    "description": "Our vacation to Paris",
+    "currency": "EUR",
+    "members": [
+      { "id": "1", "name": "John" },
+      { "id": "2", "name": "Jane" }
+    ]
+  }
+}

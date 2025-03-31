@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Group {
+  id          String   @id @default(uuid())
+  name        String
+  description String?
+  currency    String   @default("MAD")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  members     GroupMember[]
+  expenses    Expense[]
+}
+
+model GroupMember {
+  id       String   @id @default(uuid())
+  groupId  String
+  name     String
+  joinedAt DateTime @default(now())
+  expensesPaid Expense[]            @relation("ExpensesPaidBy")
+  expenseParticipants ExpenseParticipant[]
+
+  group Group @relation(fields: [groupId], references: [id])
+
+
+  @@unique([groupId, name])
+}
+
+model ExpenseCategory {
+  id        String   @id @default(uuid())
+  name      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  expenses Expense[]
+}
+
+model Expense {
+  id              String   @id @default(uuid())
+  groupId         String
+  title           String
+  amount          Decimal 
+  paidBy          String  
+  date            DateTime
+  categoryId      String?
+  isReimbursement Boolean @default(false)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  group        Group                @relation(fields: [groupId], references: [id])
+  payer        GroupMember          @relation("ExpensesPaidBy", fields: [paidBy], references: [id])
+  category     ExpenseCategory?     @relation(fields: [categoryId], references: [id])
+  participants ExpenseParticipant[]
+}
+
+model ExpenseParticipant {
+  id        String   @id @default(uuid())
+  expenseId String
+  userId    String
+  share     Decimal // The amount or portion the user owes
+  createdAt DateTime @default(now())
+
+  // Relations
+  expense Expense @relation(fields: [expenseId], references: [id])
+  user    GroupMember    @relation(fields: [userId], references: [id])
+
+  // Ensure each user is added only once per expense.
+  @@unique([expenseId, userId])
+}

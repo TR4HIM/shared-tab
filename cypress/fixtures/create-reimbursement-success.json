@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": {
+    "id": "reimbursement-123",
+    "title": "Reimbursement",
+    "amount": 50,
+    "categoryId": "payment",
+    "paidBy": "john-id",
+    "date": "2024-03-31T12:00:00Z",
+    "isReimbursement": true,
+    "participants": [
+      {
+        "userId": "john-id",
+        "userName": "John",
+        "share": 0
+      },
+      {
+        "userId": "jane-id",
+        "userName": "Jane",
+        "share": 50
+      }
+    ]
+  }
+}

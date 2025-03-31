@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 50% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 214 32% 91%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 214 32% 91%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 100% 97%;
+    --accent-foreground: 217 91% 60%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+    --chart-1: 217 91% 60%;
+    --chart-2: 201 94% 42%;
+    --chart-3: 219 30% 24%;
+    --chart-4: 232 75% 65%;
+    --chart-5: 199 85% 42%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Smooth transitions and animations */
+@layer utilities {
+  .animate-smooth {
+    transition-property: all;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  .glass {
+    @apply border border-white/20 bg-white/80 backdrop-blur-md;
+  }
+
+  .glass-card {
+    @apply border border-white/30 bg-white/90 shadow-sm backdrop-blur-md transition-all hover:shadow-md;
+  }
+
+  .glass-light {
+    @apply border border-white/10 bg-white/60 backdrop-blur-sm;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-blue-500 to-indigo-600;
+  }
+
+  .dotted-bg {
+    background-image: radial-gradient(
+      rgba(59, 130, 246, 0.5) 0.5px,
+      transparent 0.5px
+    );
+    background-size: 16px 16px;
+  }
+
+  /* Hide scrollbars but keep functionality */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Hide scrollbars on desktop only */
+  @media (min-width: 768px) {
+    .md-scrollbar-hide::-webkit-scrollbar {
+      display: none;
+    }
+
+    .md-scrollbar-hide {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+}

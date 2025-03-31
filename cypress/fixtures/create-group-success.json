@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": "Group created successfully",
+  "data": {
+    "id": "new-group-123",
+    "name": "Trip to Paris",
+    "description": "Our vacation to Paris",
+    "currency": "EUR",
+    "members": [
+      { "id": "member-1", "name": "John" },
+      { "id": "member-2", "name": "Jane" }
+    ]
+  }
+}

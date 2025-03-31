@@ -1,0 +1,22 @@
+{
+  "success": true,
+  "data": [
+    {
+      "id": "1",
+      "name": "Test Group 1",
+      "description": "This is a test group",
+      "currency": "MAD",
+      "members": [
+        { "id": "1", "name": "Member 1" },
+        { "id": "2", "name": "Member 2" }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Test Group 2",
+      "description": "Another test group",
+      "currency": "MAD",
+      "members": [{ "id": "3", "name": "Member 3" }]
+    }
+  ]
+}

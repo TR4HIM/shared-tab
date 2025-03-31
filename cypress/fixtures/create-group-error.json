@@ -1,0 +1,8 @@
+{
+  "success": false,
+  "error": {
+    "code": "INTERNAL_SERVER_ERROR",
+    "message": "Failed to create group",
+    "status": 500
+  }
+}
